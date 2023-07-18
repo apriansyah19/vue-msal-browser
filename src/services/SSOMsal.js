@@ -6,10 +6,12 @@ const msalConfig = new PublicClientApplication({
     auth: {
         clientId: "70f7e5ef-8e68-43d8-9c8e-ab814bcb1c3b",
         authority: "https://login.microsoftonline.com/common",
+        navigateToLoginRequestUrl: true,
+        validateAuthority: false,
     },
     cache: {
         cacheLocation: "localStorage", // This configures where your cache will be stored
-        storeAuthStateInCookie: true, // Set this to "true" if you are having issues on IE11 or Edge
+        storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
     },
     system: {
         allowNativeBroker: false, // Disables WAM Broker
