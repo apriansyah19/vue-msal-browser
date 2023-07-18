@@ -17,9 +17,6 @@ const Login = async () => {
     router.push({ name: "dashboard" });
   } catch (error) {
     console.log(error);
-    if (error.errorCode === "hash_does_not_contain_known_properties") {
-      Login();
-    }
   }
 };
 
