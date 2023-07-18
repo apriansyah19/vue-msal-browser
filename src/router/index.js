@@ -25,27 +25,4 @@ const router = createRouter({
   routes,
 });
 
-export default {
-  install(app) {
-    router.install(app);
-    router.beforeEach((to, _from, next) => {
-      if (localStorage.getItem("msal.account.keys") === null) {
-        if (to.name === "signIn") {
-          next();
-        } else {
-          next("/sign-in");
-        }
-      } else if (to.name === "signIn") {
-        next("/dashboard");
-      }
-      if (localStorage.getItem("msal.account.keys") === '[]') {
-        localStorage.clear()
-      }
-
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 100);
-      next();
-    });
-  },
-}
+export default router;

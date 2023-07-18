@@ -38,6 +38,7 @@ const userName = computed(() => {
 });
 
 const logout = async () => {
+  localStorage.clear();
   const logoutRequest = {
     account: msalConfig.getAccountByHomeId(
       msalConfig.getAllAccounts()[0].homeAccountId
