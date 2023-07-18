@@ -4,20 +4,25 @@ import Dashboard from "@/view/MyDashboard.vue";
 import LoginPage from "@/view/LoginPage.vue";
 
 const routes = [
+  // {
+  //   path: "/",
+  //   redirect: "/sign-in",
+  // },
   {
     path: "/",
-    redirect: "/sign-in",
+    name: "signIn",
+    component: LoginPage,
   },
   {
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard,
   },
-  {
-    path: "/sign-in",
-    name: "signIn",
-    component: LoginPage,
-  },
+  // {
+  //   path: "/sign-in",
+  //   name: "signIn",
+  //   component: LoginPage,
+  // },
 ];
 
 const router = createRouter({
@@ -33,7 +38,7 @@ export default {
         if (to.name === "signIn") {
           next();
         } else {
-          next("/sign-in");
+          next("/");
         }
       } else if (to.name === "signIn") {
         next("/dashboard");
