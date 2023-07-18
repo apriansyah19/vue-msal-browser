@@ -1,5 +1,5 @@
 /* eslint-disable no-debugger */
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Dashboard from "@/view/MyDashboard.vue";
 import LoginPage from "@/view/LoginPage.vue";
 
@@ -21,7 +21,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
