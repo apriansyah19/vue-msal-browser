@@ -13,10 +13,13 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const Login = async () => {
   try {
-    await msalConfig.acquireTokenPopup(loginRequest);
+    await msalConfig.loginPopup(loginRequest);
     router.push({ name: "dashboard" });
   } catch (error) {
     console.log(error);
+    if (error.errorCode === "hash_does_not_contain_known_properties") {
+      Login();
+    }
   }
 };
 
