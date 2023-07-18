@@ -7,13 +7,16 @@
 </template>
 
 <script setup>
-import { loginRequest, msalConfig } from "@/services/SSOMsal";
+import { msalConfig } from "@/services/SSOMsal";
 import { onBeforeMount } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
 const Login = async () => {
   try {
-    await msalConfig.loginPopup(loginRequest);
+    await msalConfig.loginPopup({
+      // redirectUri: "http://localhost:8081/",
+      redirectUri: "https://vue-msal-browser.netlify.app/",
+    });
     router.push({ name: "dashboard" });
   } catch (error) {
     console.log(error);
