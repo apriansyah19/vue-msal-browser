@@ -43,7 +43,7 @@ const logout = async () => {
       msalConfig.getAllAccounts()[0].homeAccountId
     ),
     // mainWindowRedirectUri: "http://localhost:8081/",
-    mainWindowRedirectUri: "https://vue-msal-browser.netlify.app/sign-in",
+    mainWindowRedirectUri: "https://vue-msal-browser.netlify.app/",
   };
   try {
     await msalConfig.logoutPopup(logoutRequest);
