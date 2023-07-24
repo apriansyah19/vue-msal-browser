@@ -10,7 +10,7 @@ const msalConfig = new PublicClientApplication({
         authority: "https://login.microsoftonline.com/common",
         // redirectUri: 'http://localhost:8081',
         redirectUri: 'https://vue-msal-browser.netlify.app/blank.html',
-        // postLogoutRedirectUri: 'http://localhost:8081/sign-in',
+        postLogoutRedirectUri: 'https://vue-msal-browser.netlify.app/',
         
     },
     cache: {
