@@ -2,8 +2,6 @@
 
 import { LogLevel, PublicClientApplication } from "@azure/msal-browser";
 
-console.log(process.env, '111111111111');
-
 const msalConfig = new PublicClientApplication({
     auth: {
         clientId: "70f7e5ef-8e68-43d8-9c8e-ab814bcb1c3b",
@@ -14,7 +12,7 @@ const msalConfig = new PublicClientApplication({
         
     },
     cache: {
-        cacheLocation: "localStorage", // This configures where your cache will be stored
+        cacheLocation: "sessionStorage", // This configures where your cache will be stored
         storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
     },
     system: {
