@@ -29,7 +29,7 @@ export default {
   install(app) {
     router.install(app);
     router.beforeEach((to, _from, next) => {
-      if (localStorage.getItem("msal.account.keys") === null) {
+      if (sessionStorage.getItem("msal.account.keys") === null) {
         if (to.name === "signIn") {
           next();
         } else {
@@ -38,7 +38,7 @@ export default {
       } else if (to.name === "signIn") {
         next("/dashboard");
       }
-      if (localStorage.getItem("msal.account.keys") === '[]') {
+      if (sessionStorage.getItem("msal.account.keys") === '[]') {
         localStorage.clear()
       }
 
