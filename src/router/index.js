@@ -39,7 +39,7 @@ export default {
         next("/dashboard");
       }
       if (sessionStorage.getItem("msal.account.keys") === '[]') {
-        localStorage.clear()
+        sessionStorage.clear()
       }
 
       setTimeout(() => {
